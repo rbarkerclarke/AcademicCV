@@ -17,6 +17,8 @@
 
 % Most commands and style definitions are in settings.sty.
 \usepackage{settings}
+\usepackage{fontawesome5}
+\usepackage{academicons}
 
 % If you need to further customise your biblatex setup e.g. with \DeclareFieldFormat etc please add them here AFTER loading settings.sty. For example, to remove the default "[Online] Available:" prefix before URLs when using the IEEE style:
 \DefineBibliographyStrings{english}{url={\textsc{url}}}
@@ -40,6 +42,7 @@
 % Change the fonts if you want
 \ifxetexorluatex % If you're using XeLaTeX or LuaLaTeX
   \usepackage{fontspec} 
+
   %% You can use \setmainfont etc; I'm just using these font packages here because they provide OpenType fonts for use by XeLaTeX/LuaLaTeX anyway
   \usepackage[p,osf,swashQ]{cochineal}
   \usepackage[medium,bold]{cabin}
@@ -77,6 +80,7 @@
   
   \makefield{\faGithub}{\href{https://github.com/rbarkerclarke}{\texttt{rbarkerclarke}}}
   \makefield{\faGlobe}{\url{http://rbarkerclarke.github.io/}}
+  \makefield{\faGoogleScholar}{\url{http://scholar.google.com/}}
 
   % You can use a tabular here if you want to line up the fields.
 }
@@ -92,12 +96,15 @@
 \begin{document}
 \makeheaders[c]
 
-\makerubric{employment}
+
 \makerubric{education}
+\makerubric{interests}
+\makerubric{employment}
 
 % If you're not a researcher or an academic, you probably don't have any publications; delete this line.
 %% Sometimes when a section can't be nicely modelled with the \entry[]... mechanism; hack our own and use \input NOT \makerubric
 \input{publications}
+\makerubric{software}
 \makerubric{grantsawards}
 \makerubric{conferences}
 \makerubric{teaching}
@@ -105,7 +112,7 @@
 \makerubric{service}
 \makerubric{societies}
 \makerubric{skills}
-
+%\newpage
 %\makerubric{referee}
 \input{referee-full}
 
